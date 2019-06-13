@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>学IT - 后台管理系统</title>
+    <?php include('./public/style.html');?>
+  </head>
+
+  <body>
+    <!-- 侧边栏 -->
+    <?php include('./public/aside.html');?>
+    <!-- 主体 -->
+    <div class="main">
+      <div class="container-fluid">
+        <!-- 头部 -->
+        <?php include('./public/header.html');?>
+        <!-- 讲师列表 -->
+        <div class="body teacher-list">
+          <!-- 面包屑 -->
+          <ol class="breadcrumb">
+            <li><a href="javascript:;">讲师管理</a></li>
+            <li class="active">讲师列表</li>
+          </ol>
+          <div class="page-title">
+            <a href="./teacher_add" class="btn btn-success btn-sm pull-right"
+              >添加讲师</a
+            >
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <form action="" class="form-inline">
+                <div class="input-group">
+                  <input type="text" class="form-control input-sm" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-success btn-sm">搜索</button>
+                  </span>
+                </div>
+              </form>
+            </div>
+
+            <table class="table table-striped table-bordered table-hover" id="table">
+              <thead>
+                <tr>
+                  <th>编号</th>
+                  <th>姓名</th>
+                  <th>昵称</th>
+                  <th>出生日期</th>
+                  <th>入社时间</th>
+                  <th>性别</th>
+                  <th>手机号码</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <!-- 坑 -->
+              <tbody id="teacherlistTpl"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+<!-- Modal -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body" id="teacherModal">
+        <!-- 坑 -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script id="tpl" type="text/art-template">
+      <!-- <p>asdas</p> -->
+
+      {{each comments}}
+      <tr>
+          <td>{{$index}}</td>
+          <td>{{$value.tc_name}}</td>
+          <td>{{$value.tc_roster}}</td>
+          <td>{{$value.tc_birthday}}</td>
+          <td>{{$value.tc_join_date}}</td>
+          <td>{{$value.tc_gender == 0 ? '男':'女'}}</td>
+          <td>{{$value.tc_cellphone}}</td>
+          <td data-id={{$value.tc_id}}>
+              <a href="javascript:; " class="btn btn-warning btn-xs search">查看</a>
+              <a href="./teacher_add?{{$value.tc_id}}" " class="btn btn-info btn-xs edit ">编辑</a>
+              <a href="javascript:; " class="btn btn-danger btn-xs remove zhuxiao" data-status = {{$value.tc_status}}>{{ $value.tc_status == 0 ?'注销':'启用'}}</a>
+          </td>
+      </tr>
+      {{/each}}
+    </script>
+
+    <script id="caonima" type="text/art-teamplate ">
+      <tbody>
+              <tr>
+                  <th>姓名:</th>
+                  <td>{{ tc_name }}</td>
+                  <th>职位:</th>
+                  <td colspan="3 ">{{tc_roster}}</td>
+                  <td rowspan="4 " width="128">
+                      <div class="avatar ">
+                          <img src="./images/03.jpg ">
+                      </div>
+                  </td>
+              </tr>
+              <tr>
+                  <th>花名:</th>
+                  <td>{{tc_roster}}</td>
+                  <th>出生日期:</th>
+                  <td colspan="3 ">{{tc_birthday}}</td>
+              </tr>
+              <tr>
+                  <th>性别:</th>
+                  <td> {{tc_gender == 0 ? '男':'女'}}</td>
+                  <th>入社日期:</th>
+                  <td colspan="3 ">{{tc_join_date}}</td>
+              </tr>
+              <tr>
+                  <th>手机号码:</th>
+                  <td colspan="2 ">{{tc_cellphone}}</td>
+                  <th>邮箱:</th>
+                  <td colspan="2 ">{{tc_email}}</td>
+              </tr>
+              <tr>
+                  <th>籍贯:</th>
+                  <td colspan="6 ">{{tc_hometown}}</td>
+              </tr>
+              <tr>
+                  <td colspan="7 ">
+                      <div class="introduce ">
+                          {{tc_introduce}}
+                  </td>
+              </tr>
+          </tbody>
+    </script>
+
+    <?php include('./public/script.html');?>
+
+    <script>
+      require(["teacherlist"]);
+      require(["zhuxiao"]);
+    </script>
+  </body>
+</html>
