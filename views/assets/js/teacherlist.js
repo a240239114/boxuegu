@@ -1,15 +1,18 @@
 define(["jquery", "template", "bootstrap"], function($, template) {
+
+  console.log(template);
+
   // template.defaults.imports.removeSpace = function(str) {
-  //     return str.replace('|', '');
+  //     return str.replace(/\|/g, '');
   // };
 
-//   template.defaults.imports.$test1 = function() {
-//       console.log(1);
-//       console.log(arguments)
-//       return 1
-//   }
+  // template.defaults.imports.$test1 = function(){
+  //   console.log(arguments)
+  //   return 1
+  // }
 
-  // console.log(template);
+
+
 
   $(function() {
     //先请求数据渲染页面
@@ -77,4 +80,8 @@ define(["jquery", "template", "bootstrap"], function($, template) {
         }
     })
   });
+
+
+
+
 });

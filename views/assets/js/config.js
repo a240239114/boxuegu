@@ -20,8 +20,7 @@ require.config({
         advert_list: './assets/js/advert_list',
         teacherlist: './assets/js/teacherlist',
         edit: './assets/js/edit',
-        add: './assets/js/add',
-        zhuxiao: './assets/js/zhuxiao'
+        add: './assets/js/add'
     },
 
     shim: { //设置依赖关系

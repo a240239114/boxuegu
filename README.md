@@ -24,4 +24,4 @@ http协议下不会默认产生cookie了:secure: true(https)
 
 5.退出登录: 删除sessionId和userinfo------>进行逻辑判断----->页面跳转
 
-
+6.
