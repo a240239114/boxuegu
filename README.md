@@ -25,3 +25,12 @@ http协议下不会默认产生cookie了:secure: true(https)
 5.退出登录: 删除sessionId和userinfo------>进行逻辑判断----->页面跳转
 
 6.
+
+
+###git 命令行
+git log --oneline  --all --graph  图形化的显示
+git log -p 查看详情
+git checkout -b "新分支名"
+git tag -a "V1" -m "描述"    打标签
+git tag 列出所有标签
+git show v1   显示v1的详细信息

@@ -1,4 +1,8 @@
-define(["jquery", "template", "jqueryform"], function($, template, jqueryform) {
+define(["jquery", "template", "jqueryform", "zhCN", "validate"], function(
+  $,
+  template,
+  jqueryform
+) {
   //获取路由ID
   var tc_id = location.search.substr(1);
 
@@ -19,29 +23,17 @@ define(["jquery", "template", "jqueryform"], function($, template, jqueryform) {
       // console.log(htmlStr);
 
       $("#teacherEdit").html(htmlStr);
+
+      //配置插件validate
+      $("#formSubmit").validate({
+        description: {
+          require: {
+            required: "请填写信息"
+          }
+        }
+      });
     }
   }).done(function() {
-    //   console.log(tc_id);
-
-//     $("#formSubmit").on("click", "#submit", function() {
-//       let data = $("#formSubmit").serialize();
-//       console.log(data);
-//       //点击就提交数据
-//       $.ajax({
-//         url: `/api/teacher/update?${data}`,
-//         type: "get",
-//         success: function(res) {
-//           console.log(res.msg);
-
-//           location.pathname = "/teacher_list";
-//         }
-//       });
-
-//       return false;
-//     });
-
-
-    
     $("#formSubmit").on("submit", function() {
       //点击就提交数据
       $(this).ajaxSubmit({
@@ -56,7 +48,5 @@ define(["jquery", "template", "jqueryform"], function($, template, jqueryform) {
 
       return false;
     });
-
-
   });
 });

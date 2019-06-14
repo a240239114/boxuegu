@@ -10,6 +10,9 @@ require.config({
         cookie: './assets/jquery-cookie/jquery.cookie',
         template: './assets/artTemplate/template',
         jqueryform: './assets/jquery-form/jquery.form',
+        datepicker: './assets/bootstrap-datepicker/js/bootstrap-datepicker',
+        zhCN:'./assets/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
+        validate:'./assets/jquery-validate/jquery.validate.min',
 
 
         //自定义依赖(模块)
@@ -26,6 +29,12 @@ require.config({
     shim: { //设置依赖关系
         bootstrap: {
             deps: ['jquery']
+        },
+        zhCN:{
+            deps:['datepicker']
+        },
+        validate:{
+            deps:['jquery']
         }
     }
 
