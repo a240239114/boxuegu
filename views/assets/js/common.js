@@ -1,8 +1,9 @@
-define(["nprogress", "jquery", "cookie", "template"], function(
+define(["nprogress", "jquery", "cookie", "template","method"], function(
     NProgress,
     $,
     cookie,
-    template
+    template,
+    method
 ) {
     $('#img').hide();
     $(document).ajaxStart(function() {
@@ -15,6 +16,9 @@ define(["nprogress", "jquery", "cookie", "template"], function(
         $('#img').fadeOut(1000);
     });
 
+    // setMenu();
+    // console.log(method.setMenu)
+    method.setMenu();
 
     $(".navs ul")
         .prev("a")
@@ -40,7 +44,7 @@ define(["nprogress", "jquery", "cookie", "template"], function(
         //头像和名字需要改变
         var htmlStr = template('userinfoId',userinfo);
       
-        console.log(userinfo);
+        // console.log(userinfo);
         $("#profile").html(htmlStr);
     }
 

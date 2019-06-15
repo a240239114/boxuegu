@@ -9,12 +9,12 @@ define(["jquery", "template", "jqueryform", "zhCN", "validate"], function(
 
   //配置validate插件
   $("form").validate({
-    description:{
-        require:{
-        required:"请填写信息"
+    description: {
+      required: {
+        required: "请填写信息"
       }
     }
- });
+  });
 
   //获取表单数据
   var data = $("#formSubmit").serialize();

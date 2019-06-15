@@ -25,13 +25,14 @@ define(["jquery", "template", "jqueryform", "zhCN", "validate"], function(
       $("#teacherEdit").html(htmlStr);
 
       //配置插件validate
-      $("#formSubmit").validate({
+      $("form").validate({
         description: {
-          require: {
+          required: {
             required: "请填写信息"
           }
         }
       });
+
     }
   }).done(function() {
     $("#formSubmit").on("submit", function() {

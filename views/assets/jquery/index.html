@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="jquery.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" id="from">
+      姓名:<input type="text" />
+           <input type="submit">
+    </form>
+
+    <script>
+      $(function(){
+        $("#from").on('submit',function(){
+         console.log('成功了');
+         return false;
+       })
+      });
+    </script>
+  </body>
+</html>

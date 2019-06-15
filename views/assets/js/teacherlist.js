@@ -1,6 +1,6 @@
 define(["jquery", "template", "bootstrap"], function($, template) {
 
-  console.log(template);
+  // console.log(template);
 
   // template.defaults.imports.removeSpace = function(str) {
   //     return str.replace(/\|/g, '');
