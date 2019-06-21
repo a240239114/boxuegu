@@ -16,6 +16,15 @@ define(["jquery", "template", "jqueryform", "zhCN", "validate"], function(
     }
   });
 
+  $.validator.setDefaults({
+    submitHandler: function() {
+      alert("提交事件!");
+    }
+  });
+  $().ready(function() {
+    $("#commentForm").validate();
+  });
+
   //获取表单数据
   var data = $("#formSubmit").serialize();
   console.log(data);

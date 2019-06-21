@@ -24,7 +24,7 @@
             <div class="title">
               <h5>创建课程 <small>CREATE A COURSE</small></h5>
             </div>
-            <form action="" class="form-horizontal col-xs-7">
+            <form class="form-horizontal col-xs-7" id="courseadd">
               <div class="form-group">
                 <label for="" class="col-xs-2 control-label">课程标题</label>
                 <div class="col-xs-9">
@@ -33,12 +33,13 @@
                     class="form-control input-sm"
                     name = "cs_name"
                     placeholder="请填写课程标题"
+                    required
                   />
                 </div>
               </div>
               <div class="col-xs-11">
                 <a
-                  href="./course_add_step1"
+                  href="javascript:;"
                   id = "createBtn"
                   class="btn btn-success btn-sm pull-right"
                   >创建课程</a

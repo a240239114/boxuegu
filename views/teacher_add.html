@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <title>学IT - 后台管理系统</title>
     <?php include('./public/style.html');?>
+    <script src="https://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
   </head>
 
   <body>
@@ -38,6 +41,7 @@
                              name="tc_name"
                              class="form-control input-sm"
                              placeholder="{{tc_name}}"
+                             required
                              data-required
                              data-describedby = "for_tc_name"
                              data-description = "required">
@@ -52,7 +56,7 @@
                       <input type="password"
                              class="form-control input-sm"
                              name="tc_pass"
-                             data-required
+                             required
                              data-describedby = "for_tc_pass"
                              description = "required">
                             </div>
@@ -70,7 +74,7 @@
                              data-provide = "datepicker"
                              data-date-format = "yyyy-mm-dd"
                              data-date-language="zh-CN"
-                             
+                             required
                              data-required
                              data-describedby ="for_tc_join_date"
                              data_description ="required">
@@ -83,6 +87,7 @@
                   <div class="col-xs-2">
                       <select name="tc_type"
                               class="form-control input-sm"
+                              required
                               data-required
                               data-describedby ="for_tc_type"
                               data-description ="required">
@@ -100,10 +105,10 @@
                   <label for="" class="col-xs-3 control-label">性别</label>
                   <div class="col-xs-4">
                       <label class="radio-inline">
-                            <input type="radio" name="tc_gender" value="0" {{tc_gender===0?'checked':""}}> 男
+                            <input type="radio" name="tc_gender" value="0" {{tc_gender-0 == 0 ?'checked':""}} {{if tc_gender == undefined}}checked{{/if}}> 男
                         </label>
                       <label class="radio-inline">
-                           <input type="radio" name="tc_gender" value="1" {{tc_gender===1?'checked':""}}>女
+                           <input type="radio" name="tc_gender" value="1" {{tc_gender-0 == 1 ?'checked':""}}>女
                       </label>
                   </div>
               </div>

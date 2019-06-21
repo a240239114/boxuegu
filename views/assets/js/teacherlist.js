@@ -20,6 +20,7 @@ define(["jquery", "template", "bootstrap"], function($, template) {
       url: "/api/teacher",
       type: "get",
       success: function(res) {
+        console.log(res);
         if (res.code == 200) {
           //渲染模板
           var htmlStr = template("tpl", {

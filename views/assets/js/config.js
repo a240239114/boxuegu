@@ -13,7 +13,7 @@ require.config({
         datepicker: './assets/bootstrap-datepicker/js/bootstrap-datepicker',//日期插件
         zhCN:'./assets/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',//中文格式
         validate:'./assets/jquery-validate/jquery.validate',//验证表单
-        WebUploader:'./assets/webuploader/webuploader',
+        WebUploader:'./assets/webuploader/webuploader',//上传图片
         region:'./assets/jquery-region/jquery.region',//城市联级
         CKEDITOR:'./assets/ckeditor/ckeditor',//富文本插件
 
@@ -34,7 +34,8 @@ require.config({
         courseAddstep3:'./assets/js/courseAddstep3',
         courseList:'./assets/js/courseList',
         coursecategory:'./assets/js/coursecategory',
-        coursetopic:'./assets/js/coursetopic'
+        coursetopic:'./assets/js/coursetopic',
+        repass:'./assets/js/repass'
     },
 
     shim: { //设置依赖关系

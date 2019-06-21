@@ -1,0 +1,34 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "在 PHP 中调用一个方法请求数据服务器(此时 cookie 是不能被访问的)---------->去修改 httpd.conf 文件(配置域名和 IP 地址的关系)和 httpd-vhost.conf 文件(配置域名和端口的关系)[配置本地服务器和数据服务器的映射关系]",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-less": "^4.0.1",
+    "gulp-load-plugins": "^1.6.0",
+    "gulp-uglify": "^3.0.2",
+    "open": "^6.3.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a240239114/boxuegu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a240239114/boxuegu/issues"
+  },
+  "homepage": "https://github.com/a240239114/boxuegu#readme"
+}
