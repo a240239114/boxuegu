@@ -105,7 +105,10 @@
                   <label for="" class="col-xs-3 control-label">性别</label>
                   <div class="col-xs-4">
                       <label class="radio-inline">
-                            <input type="radio" name="tc_gender" value="0" {{tc_gender-0 == 0 ?'checked':""}} {{if tc_gender == undefined}}checked{{/if}}> 男
+                            <input type="radio" 
+                                   name="tc_gender" 
+                                   value="0" 
+                                   {{tc_gender-0 == 0 ?'checked':""}} {{if tc_gender == undefined}}checked{{/if}}> 男
                         </label>
                       <label class="radio-inline">
                            <input type="radio" name="tc_gender" value="1" {{tc_gender-0 == 1 ?'checked':""}}>女

@@ -57,12 +57,12 @@ define(["jquery", "template", "bootstrap"], function($, template) {
         type:"post",
         data:{
             "tc_id":tc_id,
-            "tc_status":tc_status
+            "tc_status":tc_status//这个是当前的status
         },
         success:function(res){
-            console.log(res);
-            $(that).attr("data-status",res.result.tc_status);
-            $(that).text(arr[res.result.tc_status]);
+            // console.log(res);
+            $(that).attr("data-status",res.result.tc_status);//这个是改变之后的status
+            $(that).text(arr[res.result.tc_status]);//改变内容
         }
     })
   });

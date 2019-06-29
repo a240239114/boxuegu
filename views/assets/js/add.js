@@ -21,6 +21,7 @@ define(["jquery", "template", "jqueryform", "zhCN", "validate"], function(
       alert("提交事件!");
     }
   });
+  
   $().ready(function() {
     $("#commentForm").validate();
   });

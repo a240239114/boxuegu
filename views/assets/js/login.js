@@ -4,7 +4,7 @@ define([
 ], function($, cookie) {
     $("#form").on("submit", function() {
         var datafrom = $(this).serialize();
-        console.log('11111');
+        // console.log('11111');
         $.ajax({
             url: `/api/login?${datafrom}`,
             type: "post",
