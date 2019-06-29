@@ -4,10 +4,10 @@ define(["method","template"], function(method,template) {
 
   //获取顶级分类
   $.ajax({
-    url:"/api/category/top",
+    url:"/api/category",
     type:"get",
     success: function(res) {
-      // console.log(res);
+      console.log(res);
       var html =template('cousecategoryTpl',{
         result:res.result
       });

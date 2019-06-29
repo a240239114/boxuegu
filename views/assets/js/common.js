@@ -5,15 +5,15 @@ define(["nprogress", "jquery", "cookie", "template","method"], function(
     template,
     method
 ) {
-    $('#img').hide();
+    $('.wrap').hide();
     $(document).ajaxStart(function() {
         NProgress.start();
-        $('#img').show();
+        $('.wrap').show();
     });
 
     $(document).ajaxStop(function() {
         NProgress.done();
-        $('#img').fadeOut(1000);
+        $('.wrap').fadeOut(1000);
     });
 
     // setMenu();

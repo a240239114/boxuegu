@@ -1,24 +1,9 @@
 define(["jquery", "template", "bootstrap"], function($, template) {
-
-  // console.log(template);
-
-  // template.defaults.imports.removeSpace = function(str) {
-  //     return str.replace(/\|/g, '');
-  // };
-
-  // template.defaults.imports.$test1 = function(){
-  //   console.log(arguments)
-  //   return 1
-  // }
-
-
-
-
   $(function() {
     //先请求数据渲染页面
     $.ajax({
       url: "/api/teacher",
-      type: "get",
+      type: "GET",
       success: function(res) {
         console.log(res);
         if (res.code == 200) {

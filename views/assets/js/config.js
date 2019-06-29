@@ -34,6 +34,7 @@ require.config({
         courseAddstep3:'./assets/js/courseAddstep3',
         courseList:'./assets/js/courseList',
         coursecategory:'./assets/js/coursecategory',
+        coursecategoryAdd:'./assets/js/coursecategoryAdd',
         coursetopic:'./assets/js/coursetopic',
         repass:'./assets/js/repass'
     },

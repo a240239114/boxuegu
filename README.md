@@ -47,3 +47,7 @@ window.location.search; 接收端
 4、设置窗口之间的父子关联关系
 
 5、window.postMessage 传值，HTML5 新特性，需考虑兼容
+
+
+##不是模块才需要配置
+如何查看是不是模块?------->在源码中收索define是否存在------->存在就是模块

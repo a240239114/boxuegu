@@ -24,7 +24,7 @@
                     <li><a href="javascript:;">课程管理</a></li>
                     <li class="active">课程列表</li>
                 </ol>
-                <div class="courses">
+                <div class="courses" id="content">
                     <!-- 坑 -->
                </div>
         </div>
@@ -61,7 +61,7 @@
             {{each comments}}
             <div class="course">
                 <div class="pic">
-                    <img src="{{$value.cs_cover}}" alt="">
+                    <img src="" alt="">
                 </div>
                 <div class="info">
                     <a href="javascript:;">{{$value.cs_name}}</a>
@@ -85,7 +85,7 @@
 
 
         <!-- 分页 -->
-        <ul class="pagination pull-right">
+        <ul class="pagination pull-right" id="page">
             <li><a href="#">上一页</a></li>
             <li><a href="#" data-index = 1>1</a></li>
             <li><a href="#" data-index = 2>2</a></li>

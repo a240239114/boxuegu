@@ -4,6 +4,85 @@ body {
   font-family: "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", tahoma, arial, simsun, "宋体";
   background-color: #f4f6f8;
 }
+
+/* 动态小球 */
+.ball{
+  height: 38px;
+  width: 38px;
+  /* background-color: red; */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* transform: translate(-50%,-50%); */
+  margin-left: -19px;
+  margin-top:-19px;
+  border-radius: 50%;
+  animation: moveTo 6s infinite;
+}
+
+.ball:nth-child(2){
+  animation-delay: 150ms;
+}
+
+.ball:nth-child(3){
+  animation-delay: 250ms;
+}
+
+.ball:nth-child(4){
+  animation-delay: 350ms;
+}
+
+.ball:nth-child(5){
+  animation-delay: 450ms;
+}
+
+.ball::after{
+  content:"";
+  height: 5px;
+  width: 5px;
+  background-color:chocolate;
+  position: absolute;
+  border-radius: 50%;
+}
+
+@keyframes moveTo{
+  0%{
+      transform: rotate(225deg);
+      opacity: 1;
+      animation-timing-function: ease-out;
+  }
+  7%{
+      transform: rotate(345deg);
+      animation-timing-function: linear;
+  }
+  30%{
+      transform: rotate(455deg);
+      animation-timing-function: ease-in-out;
+  }
+  39%{
+      transform: rotate(690deg);
+      animation-timing-function: linear;
+  }
+  70%{
+      transform: rotate(815deg);
+      opacity: 1;
+      animation-timing-function: ease-out;
+  }
+  75%{
+      transform: rotate(945deg);
+      animation-timing-function: ease-out;
+  }
+  76%{
+      transform: rotate(815deg);
+      opacity: 0;
+   }
+   100%{
+      transform: rotate(815deg);
+      opacity: 0;
+   }
+}
+
+
 img {
   display: block;
   width: 100%;
