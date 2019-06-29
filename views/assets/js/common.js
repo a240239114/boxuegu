@@ -57,4 +57,12 @@ define(["nprogress", "jquery", "cookie", "template","method"], function(
             $.removeCookie("userinfo");
             location.pathname = "/login";
         });
+
+   //实现局部刷新功能
+//    $('a').on('click',function(){
+//        var url = $(this).attr('href');
+//        console.log(url);
+//        $(".main").load(url+' .main>*')
+//        return false
+//    })    
 });

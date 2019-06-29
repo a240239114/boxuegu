@@ -4,9 +4,6 @@
     <meta charset="UTF-8" />
     <title>学IT - 后台管理系统</title>
     <?php include('./public/style.html');?>
-    <script src="https://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
-<script src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
-<script src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
   </head>
 
   <body>
@@ -35,28 +32,26 @@
                      name="tc_id"
                      value="{{tc_id}}"/>
               <div class="form-group">
-                  <label for="" class="col-xs-3 control-label">姓名</label>
+                  <label for="username" class="col-xs-3 control-label">姓名</label>
                   <div class="col-xs-4">
                       <input type="text"
                              name="tc_name"
+                             id="username"
                              class="form-control input-sm"
-                             placeholder="{{tc_name}}"
-                             required
-                             data-required
-                             data-describedby = "for_tc_name"
-                             data-description = "required">
+                             placeholder="{{tc_name}}">
                   </div>
-                  <span id="for_tc_name"></span>
               </div>
 
               {{if teacherWay == null}}
               <div class="form-group">
-                  <label for="" class="col-xs-3 control-label">密码</label>
+                  <label for="password" class="col-xs-3 control-label">密码</label>
                   <div class="col-xs-4">
                       <input type="password"
                              class="form-control input-sm"
                              name="tc_pass"
-                             required
+                             id="password"
+
+                             data-required
                              data-describedby = "for_tc_pass"
                              description = "required">
                             </div>
@@ -65,16 +60,20 @@
               {{/if}}
 
               <div class="form-group">
-                  <label for="" class="col-xs-3 control-label">入职时间</label>
+                  <label for="tc_join_date" class="col-xs-3 control-label">入职时间</label>
                   <div class="col-xs-4">
                       <input type="text"
                              class="form-control input-sm"
                              name="tc_join_date"
+                             id="tc_join_date"
                              value="{{tc_join_date}}"
                              data-provide = "datepicker"
+
                              data-date-format = "yyyy-mm-dd"
+
                              data-date-language="zh-CN"
-                             required
+
+
                              data-required
                              data-describedby ="for_tc_join_date"
                              data_description ="required">
@@ -83,11 +82,12 @@
               </div>
 
               <div class="form-group">
-                  <label for="" class="col-xs-3 control-label">类型</label>
+                  <label for="tc_teacher" class="col-xs-3 control-label">类型</label>
                   <div class="col-xs-2">
                       <select name="tc_type"
                               class="form-control input-sm"
-                              required
+                              id="tc_teacher"
+
                               data-required
                               data-describedby ="for_tc_type"
                               data-description ="required">
@@ -102,12 +102,13 @@
               </div>
 
               <div class="form-group">
-                  <label for="" class="col-xs-3 control-label">性别</label>
+                  <label for="tc_gender" class="col-xs-3 control-label">性别</label>
                   <div class="col-xs-4">
                       <label class="radio-inline">
-                            <input type="radio" 
-                                   name="tc_gender" 
-                                   value="0" 
+                            <input type="radio"
+                                   name="tc_gender"
+                                   id="tc_gender"
+                                   value="0"
                                    {{tc_gender-0 == 0 ?'checked':""}} {{if tc_gender == undefined}}checked{{/if}}> 男
                         </label>
                       <label class="radio-inline">

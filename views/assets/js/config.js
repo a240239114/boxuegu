@@ -12,7 +12,7 @@ require.config({
         jqueryform: './assets/jquery-form/jquery.form',//提交数据不用传值,插件已经封装好了
         datepicker: './assets/bootstrap-datepicker/js/bootstrap-datepicker',//日期插件
         zhCN:'./assets/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',//中文格式
-        validate:'./assets/jquery-validate/jquery.validate',//验证表单
+        validate:'./assets/jquery-validate/jquery.validate',//验证表单 
         WebUploader:'./assets/webuploader/webuploader',//上传图片
         region:'./assets/jquery-region/jquery.region',//城市联级
         CKEDITOR:'./assets/ckeditor/ckeditor',//富文本插件

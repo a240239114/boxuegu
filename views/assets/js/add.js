@@ -1,37 +1,20 @@
-define(["jquery", "template", "jqueryform", "zhCN", "validate"], function(
+define(["jquery", "template", "jqueryform", "validate", "zhCN"], function(
   $,
   template,
-  jqueryform
+  jqueryform,
+  validate
 ) {
   var htmlStr = template("teahcereditTPL", {});
-
+  //渲染页面
   $("#teacherEdit").html(htmlStr);
 
-  //配置validate插件
-  $("form").validate({
-    description: {
-      required: {
-        required: "请填写信息"
-      }
-    }
-  });
-
-  $.validator.setDefaults({
-    submitHandler: function() {
-      alert("提交事件!");
-    }
-  });
-  
-  $().ready(function() {
-    $("#commentForm").validate();
-  });
+  //配置validate插件 初始化插件
+  $("#formSubmit").validate();
 
   //获取表单数据
   var data = $("#formSubmit").serialize();
-  console.log(data);
 
   $("#submit").on("click", function() {
-    console.log("点我呀");
     //点击就提交数据
     $.ajax({
       url: "/api/teacher/add",
@@ -41,7 +24,7 @@ define(["jquery", "template", "jqueryform", "zhCN", "validate"], function(
         console.log("oh yee");
       }
     });
-    location.pathname = "/teacher_list";
+    // location.pathname = "/teacher_list";
     return false;
   });
 });

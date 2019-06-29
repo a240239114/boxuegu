@@ -4,85 +4,6 @@ body {
   font-family: "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", tahoma, arial, simsun, "宋体";
   background-color: #f4f6f8;
 }
-
-/* 动态小球 */
-.ball{
-  height: 38px;
-  width: 38px;
-  /* background-color: red; */
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  /* transform: translate(-50%,-50%); */
-  margin-left: -19px;
-  margin-top:-19px;
-  border-radius: 50%;
-  animation: moveTo 6s infinite;
-}
-
-.ball:nth-child(2){
-  animation-delay: 150ms;
-}
-
-.ball:nth-child(3){
-  animation-delay: 250ms;
-}
-
-.ball:nth-child(4){
-  animation-delay: 350ms;
-}
-
-.ball:nth-child(5){
-  animation-delay: 450ms;
-}
-
-.ball::after{
-  content:"";
-  height: 5px;
-  width: 5px;
-  background-color:chocolate;
-  position: absolute;
-  border-radius: 50%;
-}
-
-@keyframes moveTo{
-  0%{
-      transform: rotate(225deg);
-      opacity: 1;
-      animation-timing-function: ease-out;
-  }
-  7%{
-      transform: rotate(345deg);
-      animation-timing-function: linear;
-  }
-  30%{
-      transform: rotate(455deg);
-      animation-timing-function: ease-in-out;
-  }
-  39%{
-      transform: rotate(690deg);
-      animation-timing-function: linear;
-  }
-  70%{
-      transform: rotate(815deg);
-      opacity: 1;
-      animation-timing-function: ease-out;
-  }
-  75%{
-      transform: rotate(945deg);
-      animation-timing-function: ease-out;
-  }
-  76%{
-      transform: rotate(815deg);
-      opacity: 0;
-   }
-   100%{
-      transform: rotate(815deg);
-      opacity: 0;
-   }
-}
-
-
 img {
   display: block;
   width: 100%;
@@ -763,35 +684,49 @@ a:focus {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: #2f4050;
+  background: url("../images/08.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .login .login-wrap {
-  width: 500px;
-  height: 340px;
-  padding-top: 85px;
-  margin: 180px auto;
-  background-color: #FFF;
-  position: relative;
-}
-.login .login-wrap .input-group {
-  margin: 20px 0;
-}
-.login .login-wrap .fa {
-  width: 18px;
-  font-size: 20px;
-}
-.login .login-wrap .avatar {
   position: absolute;
+  top: 50%;
   left: 50%;
-  top: -60px;
-  width: 140px;
-  height: 140px;
-  border: 10px solid #FFF;
-  margin-left: -70px;
-  border-radius: 50%;
-  box-shadow: 0 1px 5px #CCC;
-  background-color: pink;
-  overflow: hidden;
+  color: white;
+  transform: translate(-50%, -70%);
+}
+.login .login-wrap h1 {
+  border-bottom: 3px solid #26de81;
+  width: 100px;
+  padding: 18px 0;
+  margin: 40px 0;
+}
+.login .login-wrap .textbox {
+  margin: 8px 0;
+  border-bottom: 1px solid #4b6584;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.login .login-wrap .textbox i {
+  font-size: 20px;
+  flex: 1;
+}
+.login .login-wrap .textbox input {
+  flex: 9;
+  height: 35px;
+  width: 265px;
+  background: none;
+  border: none;
+  outline: none;
+  color: whiye;
+}
+.login .login-wrap .btn {
+  border-radius: 0px;
+  margin-top: 10px;
+  width: 100%;
+  background: none;
+  border: 1px solid #26de81;
 }
 #chapterModal label {
   color: #666;

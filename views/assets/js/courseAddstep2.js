@@ -54,7 +54,7 @@ define(["jquery", "template", "WebUploader"], function(
                 }
               });
         
-              // 当有文件添加进来的时候
+            // 当有文件添加进来的时候
             uploader.on("fileQueued", function(file) {
                 var $li = $(
                     '<div id="' +
@@ -98,7 +98,7 @@ define(["jquery", "template", "WebUploader"], function(
 
              uploader.on("uploadComplete",function(file){
                  //页面跳转
-                 location.href = "http://studyio.com/course_add_step3?"+res.result.cs_id;
+                //  location.href = "http://studyio.com/course_add_step3?"+res.result.cs_id;
              })
   }) 
 });
