@@ -16,6 +16,7 @@ require.config({
         WebUploader:'./assets/webuploader/webuploader',//上传图片
         region:'./assets/jquery-region/jquery.region',//城市联级
         CKEDITOR:'./assets/ckeditor/ckeditor',//富文本插件
+        pagination:'./assets/pagination/jquery.pagination',//分页插件
 
 
         //自定义依赖(模块)
@@ -51,6 +52,9 @@ require.config({
         },
         CKEDITOR:{
             exports:'CKEDITOR'
+        },
+        pagination:{
+            deps:['jquery']
         }
     }
 

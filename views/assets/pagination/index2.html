@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="pagination.css" />
+    <script src="common/jquery.min.js"></script>
+    <script src="jquery.pagination.js"></script>
+  </head>
+  <body>
+    <div class="box"></div>
+    <script>
+      // 当前页
+      var pagenow = 1;
+      //总页数
+      var pageall = 10;
+
+      function loadPages(pageall) {
+        $(".box").pagination({
+          pageCount: 50,
+          jump: true,
+          coping: true,
+          homePage: "首页",
+          endPage: "末页",
+          prevContent: "上页",
+          nextContent: "下页",
+          callback: function(api) {
+            console.log(api.getCurrent());
+          }
+        });
+      }
+
+      loadPages();
+    </script>
+  </body>
+</html>

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>学IT - 后台管理系统</title>
     <?php include('./public/style.html');?>
+    <link rel="stylesheet" href="./assets/pagination/pagination.css" />
 </head>
 
 <body>
@@ -24,9 +25,16 @@
                     <li><a href="javascript:;">课程管理</a></li>
                     <li class="active">课程列表</li>
                 </ol>
+
+                
                 <div class="courses" id="content">
                     <!-- 坑 -->
-               </div>
+                </div>
+
+                <!-- 分页 -->
+                <div class="setPageDiv">
+                   <div class="M-box3 m-style" id="pagination"></div>
+                </div>
         </div>
     </div>
 
@@ -82,19 +90,6 @@
                 </div>
             </div>
             {{/each}}
-
-
-        <!-- 分页 -->
-        <ul class="pagination pull-right" id="page">
-            <li><a href="#">上一页</a></li>
-            <li><a href="#" data-index = 1>1</a></li>
-            <li><a href="#" data-index = 2>2</a></li>
-            <li><a href="#" data-index = 3>3</a></li>
-            <li><a href="#" data-index = 4>4</a></li>
-            <li><a href="#" data-index = 5>5</a></li>
-            <li><a href="#">下一页</a></li>
-        </ul>
-
     </script>
 
     <?php include('./public/script.html');?>
