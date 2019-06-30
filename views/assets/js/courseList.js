@@ -9,26 +9,29 @@ define(["method", "jquery", "template", "pagination"], function(
   $(function(){//页面加载事件
        
   //分页实现函数
-  function getMsg(num) {
+  function getMsg(num) {//num参数是指每页显示的条数
     $.ajax({
       url: "/api/course",
       type: "GET",
       dataType: "json",
       success: function(res) {
           let data = res.result;
+          console.log(data.length);
 
           //默认显示第一页
           var html = template('courselistTpl',{
             comments:data.slice(0,5)
           });
           $("#content").html(html);
+          var dataL = data.length;
+          var pageCount = Math.ceil(dataL/num);//向上取整
+          console.log('count'+'=====>'+pageCount+'dataL'+'=====>'+dataL+'num'+'=====>'+num);
 
      
           $(".M-box3").pagination({
-            count:5,
-            pageCount: num,
+            pageCount:pageCount,
             jump: true,
-            showData:5,
+            showData:num,//每页显示的条数
             coping: true,
             homePage: "首页",
             endPage: "末页",
@@ -41,7 +44,7 @@ define(["method", "jquery", "template", "pagination"], function(
               let index = api.getCurrent();
               // console.log(data);
               //需要显示的数据
-              var LoadData = data.slice((index-1)*5,index*5);
+              var LoadData = data.slice((index-1)*num,index*num);
               // console.log(LoadData);
               var html = template('courselistTpl',{
                 comments:LoadData
@@ -56,6 +59,6 @@ define(["method", "jquery", "template", "pagination"], function(
   } //endfor getMsg
 
 
-  getMsg(21);
+  getMsg(5);
   })
 });
