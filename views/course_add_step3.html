@@ -23,11 +23,15 @@
                     <li class="active">课程添加</li>
                 </ol>
                 <div class="steps">
-                       <!-- 坑 -->
+      
+                </div>
+            </div>
                 </div>
             </div>
         </div>
     </div>
+
+
     <!-- 模态框 添加课程 -->
     <div class="modal fade" id="chapterModal">
         <div class="modal-dialog" style="width: 800px;">
@@ -41,7 +45,9 @@
                         <div class="form-group">
                             <label for="" class="col-xs-2 control-label">标题</label>
                             <div class="col-xs-6">
-                                <input type="text" class="form-control input-sm">
+                                <input type="text" 
+                                       class="form-control input-sm" 
+                                       name="ct_name">
                             </div>
                             <div class="col-xs-2">
                                 <div class="checkbox">
@@ -54,14 +60,19 @@
                         <div class="form-group">
                             <label for="" class="col-xs-2 control-label">简介</label>
                             <div class="col-xs-8">
-                                <textarea name="" rows="5" class="form-control input-sm"></textarea>
+                                <textarea rows="5" 
+                                          class="form-control input-sm" 
+                                          name="ct_brief"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="" class="col-xs-2 control-label">视频</label>
                             <div class="col-xs-8">
                                 <div class="input-group">
-                                    <input type="text" class="form-control input-sm" placeholder="支持优酷、土豆、腾讯、网易公开课的视频页面地址导入">
+                                    <input type="text" 
+                                           class="form-control input-sm" 
+                                           placeholder="支持优酷、土豆、腾讯、网易公开课的视频页面地址导入" 
+                                           name="ct_video">
                                     <span class="input-group-btn">
                                         <button class="btn btn-success btn-sm">获取</button>
                                     </span>
@@ -71,23 +82,31 @@
                         <div class="form-group form-inline">
                             <label for="" class="col-xs-2 control-label">时长</label>
                             <div class="col-xs-8">
-                                <input type="text" class="form-control input-sm small"> 分
-                                <input type="text" class="form-control input-sm small"> 秒
+                                <input type="text" 
+                                       class="form-control input-sm small" 
+                                       name="ct_minutes"> 分
+                                <input type="text" 
+                                       class="form-control input-sm small" 
+                                       name="ct_seconds"> 秒
                                 <p class="help-block">时长必须为整数。</p>
                             </div>
                         </div>
                         <div class="form-group form-inline">
                             <label for="" class="col-xs-2 control-label">建议学习时长</label>
                             <div class="col-xs-8">
-                                <input type="text" class="form-control input-sm small"> 小时
+                                <input type="text" 
+                                       class="form-control input-sm small" 
+                                       name="ct_recommend_duration"> 小时
                                 <p class="help-block">（如未设置，则默认学习时长为视频时长3倍取整。）</p>
                             </div>
                         </div>
                     </form>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-link btn-sm" data-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-success btn-sm"> 添 加 </button>
+                    <!-- <input type="submit" class="btn btn-success btn-sm" value="添加"> </input> -->
+                    <button class="btn btn-success btn-sm" id="save">添加</button>
                 </div>
             </div>
         </div>
@@ -124,12 +143,17 @@
                     </a>
                 </li>
             </ul>
+
             <!-- 课时管理 -->
             <div class="content">
                 <!-- 标题 -->
                 <div class="title">
                     <h5>课时管理 <small>LESSON MANAGE</small></h5>
-                    <a src="javascript:;" data-toggle="modal" data-target="#lesson" class="btn btn-success btn-sm pull-right">
+                    <a href="javascript:;" data-toggle="modal" 
+                                           id="btn" 
+                                           data-target="#lesson" 
+                                           class="btn btn-success btn-sm pull-right"
+                                           data-ct_cs_id="{{cs_id}}">
                         <i class="fa fa-plus"></i> 课时
                     </a>
                 </div>

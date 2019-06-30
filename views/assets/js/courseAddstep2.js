@@ -98,7 +98,7 @@ define(["jquery", "template", "WebUploader"], function(
 
              uploader.on("uploadComplete",function(file){
                  //页面跳转
-                //  location.href = "http://studyio.com/course_add_step3?"+res.result.cs_id;
+                 location.href = "http://studyio.com/course_add_step3?"+res.result.cs_id;
              })
   }) 
 });
