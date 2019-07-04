@@ -52,7 +52,7 @@ define([
       });
     });
 
-    //配置validate插件 初始化插件
+    //配置validate插件 初始化插件,提交数据
     $("#formStep1").validate({
       errorPlacement: function (error, element) {//改变错误信息的位子
         error.appendTo(element.closest(".form-group"));

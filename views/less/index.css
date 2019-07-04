@@ -807,6 +807,10 @@ a:focus {
   color: #666;
   font-weight: normal;
 }
+#chapterModal label.error {
+  color: red;
+  font-weight: bold;
+}
 #chapterModal .help-block {
   color: #999;
   font-size: 12px;
