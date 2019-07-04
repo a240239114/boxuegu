@@ -33,6 +33,8 @@ define(["method", "jquery", "template", "pagination"], function(
             jump: true,
             showData:num,//每页显示的条数
             coping: true,
+            mode: "fixed",
+            count:4,
             homePage: "首页",
             endPage: "末页",
             prevContent: "上页",

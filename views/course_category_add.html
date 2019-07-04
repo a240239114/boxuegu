@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>学IT - 后台管理系统</title>
-    <?php include('./public/style.html');?>
-  </head>
 
-  <body>
-    <!-- 侧边栏 -->
-    <?php include('./public/aside.html');?>
-    <!-- 主体 -->
-    <div class="main">
-      <div class="container-fluid">
-        <!-- 头部 -->
-        <?php include('./public/header.html');?>
-        <div class="body course-category">
-          <!-- 面包屑 -->
-          <ol class="breadcrumb">
-            <li><a href="javascript:;">课程管理</a></li>
-            <li class="active">课程分类</li>
-          </ol>
-          <div class="category-add">
-            <!-- 坑 -->
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <title>学IT - 后台管理系统</title>
+  <?php include('./public/style.html');?>
+</head>
+
+<body>
+  <!-- 侧边栏 -->
+  <?php include('./public/aside.html');?>
+  <!-- 主体 -->
+  <div class="main">
+    <div class="container-fluid">
+      <!-- 头部 -->
+      <?php include('./public/header.html');?>
+      <div class="body course-category">
+        <!-- 面包屑 -->
+        <ol class="breadcrumb">
+          <li><a href="javascript:;">课程管理</a></li>
+          <li class="active">课程分类</li>
+        </ol>
+        <div class="category-add">
+          <!-- 坑 -->
         </div>
       </div>
     </div>
+  </div>
 
-    <script id="category-add-TPL" type="art-template">
-      <form action="" class="form-horizontal">
+  <script id="category-add-TPL" type="art-template">
+      <form action="" class="form-horizontal" id="course_category_add">
               
               {{if cg_id}}   
               <input type="hidden" name="cg_id" value="{{cg_id}}">
@@ -37,10 +38,11 @@
               <div class="form-group">
                 <label for="" class="col-xs-4 control-label">名称</label>
                 <div class="col-xs-3">
-                  <input type="text" class="form-control input-sm" 
-                                     name="cg_name" 
+                  <input type="text" class="form-control input-sm"                                
                                      value="{{cg_name}}"
-                                     placeholder="填写分类名称">
+                                     placeholder="填写分类名称"
+                                     name ="cg_name" 
+                                     id ="cg_name" >
                 </div>
               </div>
               <div class="form-group">
@@ -57,7 +59,11 @@
               <div class="form-group">
                 <label for="" class="col-xs-4 control-label">排序</label>
                 <div class="col-xs-1">
-                  <input type="text" class="form-control input-sm" name="cg_order" value="{{cg_order}}">
+                  <input type="text" 
+                         class="form-control input-sm" 
+                         value="{{cg_order}}"
+                         name ="cg_order"
+                         id ="cg_order">
                 </div>
               </div>
               <div class="form-group">
@@ -67,7 +73,7 @@
                     <input type="radio" 
                            name="cg_is_hide" 
                            value="0" 
-                          {{if cg_is_hide==0}}checked{{/if}}> 是
+                          {{if cg_is_hide==0 || cg_is_hide == undefined}}checked{{/if}}> 是
                   </label>
                   <label class="checkbox-inline">
                     <input type="radio" 
@@ -79,16 +85,17 @@
               </div>
               <div class="form-group">
                 <div class="col-xs-8">
-                  <a href="./course_category" class="btn btn-success btn-sm pull-right" id="save">{{cg_id?'保存':'添加'}}</a>
+                  <input type="submit" class="btn btn-success btn-sm pull-right" id="save" value="{{cg_id?'保存':'添加'}}"></input>
                 </div>
               </div>
             </form>
     </script>
 
-    <?php include('./public/script.html');?>
+  <?php include('./public/script.html');?>
 
-    <script>
-      require(["coursecategoryAdd"]);
-    </script>
-  </body>
+  <script>
+    require(["coursecategoryAdd"]);
+  </script>
+</body>
+
 </html>
