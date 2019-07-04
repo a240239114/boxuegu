@@ -20,8 +20,6 @@
       </div>
     </div>
 
-    <?php include('./public/script.html');?>
-
     <script type="text/art-tempalte" id="courseAddTml">
         <!-- 面包屑 -->
       <ol class="breadcrumb">
@@ -64,7 +62,7 @@
               <div class="title">
                   <h5>基本信息 <small>BASIC INFORMATION</small></h5>
               </div>
-              <form action="" class="basic form-horizontal" id="form">
+              <form action="" class="basic form-horizontal" id="formStep1">
                   <!-- 传递cs_id -->
                  <input type="hidden" name="cs_id" value="{{cs_id}}">
 
@@ -73,17 +71,24 @@
                   <div class="form-group">
                       <label for="" class="col-xs-2 control-label">标题</label>
                       <div class="col-xs-8">
-                          <input type="text" class="form-control input-sm" name="cs_name" value="{{cs_name}}">
+                          <input type="text" class="form-control input-sm" 
+                                             value="{{cs_name}}" 
+                                             name="cs_name"
+                                             id="cs_name">
                       </div>
                   </div>
+
                   <div class="form-group">
                       <label for="" class="col-xs-2 control-label">课程描述</label>
                       <div class="col-xs-8 ckeditor">
                           <textarea name="cs_brief"
                                     rows="15" class="form-control input-sm"
-                                    id="cs_brief">{{cs_brief}}</textarea>
+                                    name = "cs_brief"
+                                    id = "cs_brief">{{cs_brief}}</textarea>
                       </div>
                   </div>
+
+
                   <div class="form-group">
                       <label for="" class="col-xs-2 control-label">讲师</label>
                       <div class="col-xs-8">
@@ -127,14 +132,16 @@
                       <div class="col-xs-8">
                           <input type="text"
                                  class="form-control input-sm"
+                                 value="{{cs_tags}}"
                                  name = "cs_tags"
-                                 value="{{cs_tags}}">
+                                 id = "cs_tags">
                           <p class="help-block">将会应用于按标签搜索课程、相关课程的提取等</p>
                       </div>
                   </div>
+
                   <div class="form-group">
                       <div class="col-xs-10">
-                          <a href="./course_add_step2?{{cs_id}}" class="btn btn-success btn-sm pull-right" id="submit">保 存</a>
+                          <input type="submit" class="btn btn-success btn-sm pull-right" value="保存"></input>
                       </div>
                   </div>
 
@@ -142,6 +149,9 @@
           </div>
       </div>
     </script>
+
+
+    <?php include('./public/script.html');?>
 
 
     <script>

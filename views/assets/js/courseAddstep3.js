@@ -21,7 +21,6 @@ define(["jquery", "template", "bootstrap", "jqueryform"], function(
     }
   }).done(function() {
 
-
     //点击添加课时
     $("#btn").on("click", function() {
       $("#chapterModal").modal("show");
@@ -33,8 +32,6 @@ define(["jquery", "template", "bootstrap", "jqueryform"], function(
 
       //准备提交数据
       $("#save").click(function() {
-        //   console.log($(this).attr('data-ct_cs_id'));
-
         //判断免费课时的选中状态----->选中 (ct_is_free=1)
         //   console.log($(".checkbox input[type='checkbox']").prop('checked'));
         var flag = $(".checkbox input[type='checkbox']").prop("checked");
@@ -46,9 +43,7 @@ define(["jquery", "template", "bootstrap", "jqueryform"], function(
 
         let data = $(".form-horizontal").serialize();
         data = data + "&ct_cs_id=" + ct_cs_id + "&ct_is_free=" + ct_is_free;
-        // console.log(data);
 
-        //   alert("表单提交了")
         $.ajax({
           url: "/api/course/chapter/add",
           type: "POST",
@@ -122,6 +117,5 @@ define(["jquery", "template", "bootstrap", "jqueryform"], function(
       });
     });
 
-    //   console.log($("#btn"))
   });
 });

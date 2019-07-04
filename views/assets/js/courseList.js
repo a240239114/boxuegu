@@ -16,7 +16,7 @@ define(["method", "jquery", "template", "pagination"], function(
       dataType: "json",
       success: function(res) {
           let data = res.result;
-          console.log(data.length);
+          // console.log(data.length);
 
           //默认显示第一页
           var html = template('courselistTpl',{
@@ -25,7 +25,7 @@ define(["method", "jquery", "template", "pagination"], function(
           $("#content").html(html);
           var dataL = data.length;
           var pageCount = Math.ceil(dataL/num);//向上取整
-          console.log('count'+'=====>'+pageCount+'dataL'+'=====>'+dataL+'num'+'=====>'+num);
+          // console.log('count'+'=====>'+pageCount+'dataL'+'=====>'+dataL+'num'+'=====>'+num);
 
      
           $(".M-box3").pagination({
@@ -51,13 +51,19 @@ define(["method", "jquery", "template", "pagination"], function(
               });
               // console.log(html);
               $("#content").html(html);
+
             }
           });
 
       } //endfor success
-    }); //endfor ajax
+    }).done(function(res){
+      $(".info").on('click',function(){
+           var cs_id = $(this).attr("data-id");
+           console.log(cs_id);
+           window.location.href = "course_add_step3?"+cs_id;
+      });
+    });
   } //endfor getMsg
-
 
   getMsg(5);
   })
