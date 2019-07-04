@@ -1,6 +1,7 @@
 <?php
   //如果用户只输入域名，默认配置路径到网站主页
   //$path = "/views/index";
+  header('Content-Type: text/html; charset=utf-8');  
 
   //判断地址栏信息是否存在域名后的部分，存在即把默认的部分替代掉
 
@@ -23,8 +24,6 @@
    
 
   include ($filename.'.html');
-
-
 
 ?>
 
