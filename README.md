@@ -28,12 +28,14 @@ http 协议下不会默认产生 cookie 了:secure: true(https)
 6.
 
 ###git 命令行
-git log --oneline --all --graph 图形化的显示
-git log -p 查看详情
-git checkout -b "新分支名"
-git tag -a "V1" -m "描述" 打标签
-git tag 列出所有标签
-git show v1 显示 v1 的详细信息
+git log --oneline --all --graph                 图形化的显示
+git log -p                                      查看详情
+git checkout -b "新分支名"                       创建并跳转分支
+git tag -a "V1" -m "描述"                       打标签
+git tag                                         列出所有标签
+git show v1                                     显示 v1 的详细信息
+git branch                                      列举所有的分支
+git branch -d "分支名"                           删除分支
 
 ##页面之间传值的方式
 1、使用 window.location 的 href 属性，等于重新刷新页面，必须是 get 请求，post 请求需要服务端解析，post 是用来客户端服务端传递数据

@@ -253,6 +253,11 @@ a:focus {
   color: #666;
   font-weight: normal;
 }
+.main .body label.error {
+  color: red;
+  padding-top: 5px;
+  font-weight: bold;
+}
 .main .body .pagination {
   margin-top: 0;
 }
