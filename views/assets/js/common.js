@@ -1,4 +1,4 @@
-define(["nprogress", "jquery", "cookie", "template","method"], function(
+define(["nprogress", "jquery", "cookie", "template", "method"], function (
     NProgress,
     $,
     cookie,
@@ -6,12 +6,12 @@ define(["nprogress", "jquery", "cookie", "template","method"], function(
     method
 ) {
     $('.wrap').hide();
-    $(document).ajaxStart(function() {
+    $(document).ajaxStart(function () {
         NProgress.start();
         $('.wrap').show();
     });
 
-    $(document).ajaxStop(function() {
+    $(document).ajaxStop(function () {
         NProgress.done();
         $('.wrap').fadeOut(1000);
     });
@@ -22,7 +22,7 @@ define(["nprogress", "jquery", "cookie", "template","method"], function(
 
     $(".navs ul")
         .prev("a")
-        .on("click", function() {
+        .on("click", function () {
             $(this)
                 .next()
                 .slideToggle();
@@ -42,8 +42,8 @@ define(["nprogress", "jquery", "cookie", "template","method"], function(
         var userinfo = JSON.parse($.cookie("userinfo"));
 
         //头像和名字需要改变
-        var htmlStr = template('userinfoId',userinfo);
-      
+        var htmlStr = template('userinfoId', userinfo);
+
         // console.log(userinfo);
         $("#profile").html(htmlStr);
     }
@@ -51,18 +51,18 @@ define(["nprogress", "jquery", "cookie", "template","method"], function(
     //退出登录
     $(".fa-sign-out")
         .parent()
-        .on("click", function() {
+        .on("click", function () {
             //删除sessionID和userinfo
             $.removeCookie("PHPSESSID");
             $.removeCookie("userinfo");
             location.pathname = "/login";
         });
 
-   //实现局部刷新功能
-//    $('a').on('click',function(){
-//        var url = $(this).attr('href');
-//        console.log(url);
-//        $(".main").load(url+' .main>*')
-//        return false
-//    })    
+    //实现局部刷新功能
+    //    $('a').on('click',function(){
+    //        var url = $(this).attr('href');
+    //        console.log(url);
+    //        $(".main").load(url+' .main>*')
+    //        return false
+    //    })    
 });

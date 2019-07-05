@@ -15,6 +15,16 @@ a:hover,
 a:focus {
   text-decoration: none;
 }
+.profile {
+  position: relative;
+}
+.playerContainer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 5px;
+  background-color: #2f3640;
+}
 /* 动态小球 */
 .ball {
   height: 38px;

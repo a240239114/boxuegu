@@ -1,4 +1,4 @@
-define(["jquery", "bootstrap", "nprogress", "echarts", "cookie"], function(
+define(["jquery", "bootstrap", "nprogress", "echarts", "cookie","htmlPlayer","htmlPlayerJs"], function(
     $,
     bootstrap,
     nprogress,

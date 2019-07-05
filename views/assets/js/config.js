@@ -17,6 +17,8 @@ require.config({
         region:'./assets/jquery-region/jquery.region',//城市联级
         CKEDITOR:'./assets/ckeditor/ckeditor',//富文本插件
         pagination:'./assets/pagination/jquery.pagination',//分页插件
+        htmlPlayer:'./assets/HTML5Player/js/jquery-ui-1.8.17.custom.min',//音乐播放器
+        htmlPlayerJs:'./assets/HTML5Player/js/script',
 
 
         //自定义依赖(模块)
@@ -55,7 +57,13 @@ require.config({
         },
         pagination:{
             deps:['jquery']
-        }
+        },
+        htmlPlayer:{
+            deps:['jquery']
+        },
+        htmlPlayerJs:{
+            deps:['jquery']
+        }  
     }
 
 });
