@@ -7,6 +7,10 @@ define(["jquery", "bootstrap", "nprogress", "echarts", "cookie","htmlPlayer","ht
 ) {
     //基于准备好的dom，初始化echarts实例
     // console.dir(echarts);
+    if(location.href.indexOf("#reloaded")==-1){
+        location.href=location.href+"#reloaded";
+        location.reload();
+    }
 
     var myChart = echarts.init(document.getElementById("main"));
 

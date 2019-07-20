@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>初次体验</title>
+	<style type="text/css">
+	   .move{
+	   	  height: 800px;
+	   	  width: 800px;
+	   }
+       .show{
+       	  height: 200px;
+       	  width: 200px;
+       	  position: absolute;
+       	  left:20px;
+       	  background-color: green;
+       	  transition-property: all;
+       	  transition-duration: 3s;
+       }
+       .move:hover .show{
+           left:500px;
+           width: 1000px;
+       }
+	</style>
+</head>
+<body>
+   <div class="move">
+	   <div class="show"></div>
+   </div>
+</body>
+</html>
