@@ -18,7 +18,7 @@
             "port":"22",
             "ref":"origin/master",
             "repo":"git@github.com:a240239114/boxuegu.git",
-            "path":"var/www/boxuegu/production",
+            "path":"../../var/www/boxuegu/production",
             "ssh_options":"StrictHostKeyChecking=no",
             "post-deploy":"cnpm install && ecosystem.json --env production",
             "env":{
